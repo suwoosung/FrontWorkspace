@@ -9,7 +9,7 @@ div[name=name1]{
     선택자[속성~=속성값] : 속성의 "포함"(단어로써)
     div태그 중 name속성값에 name1이 "포함"되어있는 요소를 선택
 */
-[name~=name1]{
+div[name~=name1]{
     background-color: yellow;
 }
 /*
