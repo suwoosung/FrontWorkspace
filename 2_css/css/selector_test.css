@@ -1,0 +1,11 @@
+#container1{
+    background-color: yellow;
+}
+
+#container2 >pre{
+    color: red;
+}
+
+#container2 >p{
+    color: pink;
+}
