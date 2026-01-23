@@ -1,16 +1,16 @@
-#container1{
+#container1.highlight{
     background-color: yellow;
 }
 
-#container2 >pre{
+#container2 > p{
     color: red;
 }
 
-#container2 >p{
+#container2 > pre{
     color: pink;
 }
 
-#container3 > input:not(input:nth-child(3)){
+#container3 > input:not(input[type=submit]){
     border: 1px solid blue;
 }
 
@@ -25,7 +25,7 @@
     font-size: 20px;
 }
 
-div[class|=user]{
+div[class^=user]{
     background-color: lightgray;
 }
 
@@ -37,11 +37,11 @@ div[class~=product]{
     background-color: coral;
 }
 
-div[class*=admin]{
+div[class|=admin]{
     background-color: greenyellow;
 }
 
-#container6 > input{
+#container6 > input:focus{
     background-color: yellow;
 }
 
@@ -57,7 +57,7 @@ div[class*=admin]{
     color: blue;
 }
 
-#container9 p[title *= important]:not([title *= not-important]){
+#container9 > p[title *= important]:not(p[title *= not-important]){
     background-color: red;
 }
 
