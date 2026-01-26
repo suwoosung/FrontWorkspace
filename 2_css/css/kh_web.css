@@ -13,6 +13,10 @@
     display: flex;
 }
 
+#header img{
+    border: none;
+}
+
 #header > div:nth-child(1){
     flex-basis: 15%;
 }
@@ -52,12 +56,20 @@
 #body{
     height: 30px;
     display: flex;
+
+    position: sticky;
+    top: 0;
+    /*
+        stickey
+        - 스크롤이 임계점에 도달했을 때 화면애 스트커처럼 요소를 붙이는 속성
+        - 평소에는 기본position상태를 유지하다가, 임계점 도달시 flex상태
+    */
 }
 
 #a, #b, #c, #d, #e, #f{
     border: 0px solid white;
     text-align: center;
-}
+} 
 
 #body > #a:nth-child(1){
     flex-basis: 15%;
@@ -83,34 +95,39 @@
     flex-basis: 25%;
 }
 
-#body > #a:nth-child(1){
+#body > #a:nth-child(1):hover{
     background-color: #455ba8;
     color: white;
     border-radius: 5px;
+    transition-duration: 0.15;
 }
 
 #body > #b:nth-child(2):hover{
     background-color: #455ba8;
     color: white;
     border-radius: 5px;
+    transition-duration: 0.15;
 }
 
 #body > #c:nth-child(3):hover{
     background-color: #455ba8;
     color: white;
     border-radius: 5px;
+    transition-duration: 0.15;
 }
 
 #body > #d:nth-child(4):hover{
     background-color: #455ba8;
     color: white;
     border-radius: 5px;
+    transition-duration: 0.15;
 }
 
 #body > #e:nth-child(5):hover{
     background-color: #455ba8;
     color: white;
     border-radius: 5px;
+    transition-duration: 0.15;
 }
 
 
@@ -137,26 +154,19 @@
 /* 상단 입력+버튼 행 */
 .login-input-row {
     display: flex;
-    width: 100%; /* 오른쪽 공백을 없애기 위해 100% 설정 */
+    width: 97%; 
     height: 70px;
 }
 
 .input-wrap {
     display: flex;
     flex-direction: column;
-    flex: 1; /* 아이디/비번 칸이 남은 왼쪽 공간을 다 차지함 */
+    flex: 1; 
 }
 
 .input-wrap input {
     height: 50%;
-    border: 1px solid black;
     padding-left: 10px;
-    box-sizing: border-box;
-}
-
-/* 아래 칸의 윗선이 겹쳐서 굵어지는 것 방지 */
-.input-wrap input:last-child {
-    border-top: none;
 }
 
 .login-input-row {
@@ -166,7 +176,11 @@
 /* 로그인 버튼을 오른쪽 끝에 붙임 */
 .login-input-row button {
     width: 30%;
-    margin-right: 10px; 
+}
+
+.login-input-row button:hover{
+   background-color: #455ba8;;
+   color: white;;
 }
 
 /* 하단 링크 행 */
@@ -176,9 +190,45 @@
     width: 97%; /* 하단 바도 오른쪽 끝까지 */
     height: 35px;
     padding-left: 10px;
-    box-sizing: border-box;
     margin: 5px;
 }
+
+.login-link-row a{
+    border: none;
+}
+
+.login-link-row span{
+    border: none;
+    padding: 0px 20px
+}
+
+#footer{
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#footer > p{
+    font-weight: bold;
+    border: none;
+}
+
+#footer > div a{
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    border: none;
+}
+
+#footer > div span{
+    padding: 0 10px;
+    border: none;
+}
+
 
 
 
