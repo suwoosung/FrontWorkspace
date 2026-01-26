@@ -66,140 +66,134 @@
     */
 }
 
-#a, #b, #c, #d, #e, #f{
-    border: 0px solid white;
+#nav{
+    height: 50px;
+
+    border-bottom:2px solid black;
+    background-color: white;
+
+    position : sticky;
+    top : 0;
+    /*
+        sticky 
+         - 스크롤이 임계점에 도달했을 때 화면에 스티커처럼 요소를 붙이는 속성
+         - 평소에는 기본 position상태를 유지하다가, 임계점 도달시 fixed로 변경된다. 
+         - top , bottom, left, right 속성이 필수로 작성되어야 한다.
+    */
+}
+
+#nav > ul {
+    display: flex;
+    list-style: none;
+    padding : 0;
+    margin : 0;
+    height: 100%;
+}
+
+#nav li {
+    flex : 0 1 150px;
+}
+
+#nav a {
+    display: block;
+    height: 100%;
     text-align: center;
-} 
+    /* padding : 11px 0; */
+    line-height: 50px;
 
-#body > #a:nth-child(1){
-    flex-basis: 15%;
+    text-decoration: none;
+    color:black;
+    font-size : 18px;
+    font-weight: bold;
+
 }
 
-#body > #b:nth-child(2){
-    flex-basis: 15%;
-}
-
-#body > #c:nth-child(3){
-    flex-basis: 15%;
-}
-
-#body > #d:nth-child(4){
-    flex-basis: 15%;
-}
-
-#body > #e:nth-child(5){
-    flex-basis: 15%;
-}
-
-#body > :nth-child(6){
-    flex-basis: 25%;
-}
-
-#body > #a:nth-child(1):hover{
+#nav a:hover{
     background-color: #455ba8;
-    color: white;
+    color:white;
     border-radius: 5px;
-    transition-duration: 0.15;
-}
-
-#body > #b:nth-child(2):hover{
-    background-color: #455ba8;
-    color: white;
-    border-radius: 5px;
-    transition-duration: 0.15;
-}
-
-#body > #c:nth-child(3):hover{
-    background-color: #455ba8;
-    color: white;
-    border-radius: 5px;
-    transition-duration: 0.15;
-}
-
-#body > #d:nth-child(4):hover{
-    background-color: #455ba8;
-    color: white;
-    border-radius: 5px;
-    transition-duration: 0.15;
-}
-
-#body > #e:nth-child(5):hover{
-    background-color: #455ba8;
-    color: white;
-    border-radius: 5px;
-    transition-duration: 0.15;
+    transition-duration: 0.1s;
 }
 
 
-#foot{
+#content {
     height: 800px;
     display: flex;
 }
 
-#foot > #empty:nth-child(1){
+#content > div:nth-child(1){
     flex-basis: 70%;
 }
-
-#foot > #login:nth-child(2){
-    flex-basis: 30%;
+#content > div:nth-child(2){
+    flex-basis :30%;
 }
 
-/* 로그인 전체 컨테이너를 부모 너비에 꽉 채움 */
-#login {
-    width: 100%; 
+#login-form{
+    height: 140px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#id-pw-area{
+    margin: 0px;
+    padding: 0px;
+    border : 1px solid #ddd;
+
+    display: flex;
+    flex-basis: 60%;
+}
+
+#id-pw-area > div:first-child{
+    flex-basis: 75%;   
     display: flex;
     flex-direction: column;
 }
-
-/* 상단 입력+버튼 행 */
-.login-input-row {
+#id-pw-area > div:last-child{
+    flex-basis:25%;
     display: flex;
-    width: 97%; 
-    height: 70px;
+    justify-content: center;
 }
 
-.input-wrap {
-    display: flex;
-    flex-direction: column;
-    flex: 1; 
+#id-pw-area > div:first-child > input {
+    border : 0;
+    border-right : 1px solid #ddd;
+    flex-basis : 50%;
+    outline: 0;
+    margin : 0;
+    padding : 5px;
 }
 
-.input-wrap input {
-    height: 50%;
-    padding-left: 10px;
+#id-pw-area > div:last-child > button{
+    flex-basis: 100%;
+    border : 0;
+    background-color: white;
+    cursor:pointer;
 }
 
-.login-input-row {
-    margin: 5px;
+#id-pw-area > div:last-child > button:hover{
+    background-color: #455ba8;
+    color: white;
 }
 
-/* 로그인 버튼을 오른쪽 끝에 붙임 */
-.login-input-row button {
-    width: 30%;
+#signup-find-area{
+    flex-basis: 20%;
+    margin-top: 10px;
+    padding-left : 5px;
 }
 
-.login-input-row button:hover{
-   background-color: #455ba8;;
-   color: white;;
-}
-
-/* 하단 링크 행 */
-.login-link-row {
-    display: flex;
-    align-items: center;
-    width: 97%; /* 하단 바도 오른쪽 끝까지 */
-    height: 35px;
-    padding-left: 10px;
-    margin: 5px;
-}
-
-.login-link-row a{
+#signup-find-area > a {
+    color:black;
+    text-decoration: none;
+    font-size : 14px;
     border: none;
 }
 
-.login-link-row span{
+#signup-find-area > span {
+    padding : 0 10px;
     border: none;
-    padding: 0px 20px
 }
 
 #footer{
