@@ -100,34 +100,30 @@
             체크 박스 선택 후 카테고리 선택을 누르면 하단 네모에 선택한 카테고리 출력.
         */
         function printCategory(){
-            var checkboxes = document.querySelectorAll("input[name=category]");
-            var area = document.getElementById("area");
-            result="";
-            
-            for(var i=0; i<checkboxes.length; i++){
+            area.innerHTML = ""; // 내용초기화
+
+            // 체크한 체크박스들 가져오기
+            var checkboxes = document.querySelectorAll("input[name=category]:checked");
+            for(let i=0; i<checkboxes.length; i++){
                 if(checkboxes[i].checked){
-                    result += checkboxes[i].value+", ";
+                   area.innerHTML += checkboxes[i].value;
+                }
+                if(i < checkboxes.length-1){
+                    area.innerHTML += ", ";
                 }
             }
-
-            // 0부터 뒤에서 2글자를 제외한 나머지만 저장
-            if(result.length>0){
-                result = result.substring(0, result.length-2);
-            }
-
-            area.innerText = result;
         }
 
         /* 2번기능 (전체선택기능).
          전체선택 체크박스 선택시 모든 카테고리가 선택되며, 선택 해제서 모든 체크박스가 선택 해제. 
         */
         function selectAll(){
-            var selectAll = document.getElementById("selectAll");
+            var checked = document.querySelector("#selectAll").checked;
             var checkboxes = document.querySelectorAll("input[name=category]");
 
             // 전체 선택을 누르면 각 속성을 반복하면서 체크함
-            for(var i=0; i<checkboxes.length; i++){
-                checkboxes[i].checked = selectAll.checked;
+            for(let i=0; i<checkboxes.length; i++){
+                checkboxes[i].checked = checked;
             }
         }
 
@@ -136,22 +132,11 @@
            하나라도 선택이 되어있지 않으면 전체선택 체크박스는 선택 해제
         */
         function checkCategory(checkbox){
-           var selectAll = document.getElementById("selectAll");
+           var selectAll = document.querySelector("#selectAll");
            var checkboxes = document.querySelectorAll("input[name=category]");
-           var checkedCount = 0;
-
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i].checked) {
-                    checkedCount++;
-                }
-            }
-
-            // 모든 체크박스가 체크되어 있다면 전체 선택 박스도 체크, 아니면 해제
-            if (checkedCount === checkboxes.length) {
-                selectAll.checked = true;
-            } else {
-                selectAll.checked = false;
-            }
+           var checkedboxes = document.querySelectorAll("input[name=category]:checked");
+        
+            selectAll.checked = checkboxes.length == checkedboxes.length;
         }
     </script>
 </body>
