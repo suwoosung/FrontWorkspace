@@ -24,7 +24,7 @@ test1.onclick = function(){
     }
 
     // 향상된 반복문
-    // 1. for .. in문
+    // 1. for .. in문(객체의 열쇠를 찾을때)
     //   - 객체, 배열 모두 반복이 가능
     //   - 객체 반복시 i에는 객체의 속성명이 대입
     //   - 배열 반복시 i에는 배열의 인데스가 대입된다.
@@ -33,7 +33,7 @@ test1.onclick = function(){
     }
 
     /*
-        2. for .. of문
+        2. for .. of문(배열의 알맹이를 찾을때)
          - java의 향상된 반복문과 가장 비슷한 구문으로, 배열유형의 데이터를
          반복시키기 위해 사용한다.
          - i에는 각 인덱스에 저장된 값이 대입된다
@@ -113,7 +113,7 @@ test7.onclick = function(){
     });
     console.log(names);
 
-    // sort메서드의 기본 정렬은 :문자열 기준"정렬
+    // sort메서드의 기본 정렬은 :"문자열 기준"정렬
     arr = [1, 2, 15];
     console.log(arr.sort()); // 1, 15, 2
     // "2" > "15" true
@@ -200,7 +200,7 @@ test12.onclick = function(){
         result += "<li>"+hobby+"</li>";
     }
     var ul = document.querySelector("#hobby-list");
-    ul.innerHTML = result;
+    ul.innerHTML += result;
 };
 
 /*
@@ -213,7 +213,7 @@ test13.onclick = function(){
     var sum = 0;
 
     arr.forEach( (num, index, arr2) => {
-        //console.log(num, index, arr2);
+        //console.log(num , index, arr2);
         sum += num;
     })
     
@@ -232,7 +232,7 @@ test13.onclick = function(){
 /*
     array에서만 사용 가능한 함수
 
-    find : 배열에서 내가 지정한 조건을 만족하는 1개으 요소 반환
+    find : 배열에서 내가 지정한 조건을 만족하는 1개의 요소 반환
     filter : 배열에서 내가 지정한 조건을 만족하는 n개의 요소를 담은 배열 반환
     map : 배열안의 데이터를 내가 원하는 요소롤 변경시켜 반환
 */

@@ -5,7 +5,7 @@ confirmBtn.onclick = function(){
     if(bool){
         // 파일삭제 로직..
         // alert : 메세지 내용울 츌력하는 팝업
-        alert("파일을 삭제했습니다.")
+        alert("파일을 삭제했습니다.");
     }
 };
 
@@ -16,6 +16,7 @@ promptBtn.onclick = function(){
     console.log(name); // 값이 있는 경우 , 값이 없는 경우(null, '')
 
     // 자바스크립트에서는 "값이 존재하는 경우" true, 값이 존재하지 않는 경우 false
+    // if(name == null || name == "")
     if(!name){
     //if(name == null || name == ""){
         alert("올바른 이름을 입력하세요.");

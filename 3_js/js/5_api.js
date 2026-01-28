@@ -24,9 +24,9 @@ test2.onclick = function(){
     // 그 외 자바의 메서드명과 동일한 메서드 다수 존재
 };
 
-test3.onclick = function(){
+test3.onclick = function (){
     var now = new Date();
-    //console.log(now);
+    console.log(now);
 
     // 내가원하는 시간정보를 가진 Date객체
     var time1 = new Date(2026, 0, 20); // 2026-01-20
@@ -37,18 +37,18 @@ test3.onclick = function(){
     console.log(time2);
 
     // date객체를 yyyy/mm/dd(e) HH:MM:ss형식으로 출력하고 싶다면?
-    displayDate(now);
+    displayDate(time2);
 };
 
-function displayDate(date){
+function displayDate(date){    
     var yyyy = date.getFullYear();
     var mm = date.getMonth()+1;
     var dd = date.getDate();
     var dayArr = ['일','월','화','수','목','금','토'];
-    var day = date.getDate(); // 0(일)~6(토)
+    var day = date.getDay();// 0(일)~6(토)
 
-    alert(yyyy+"/"+mm+"/"+day+"("+dayArr[day]+")");
-};
+    alert(yyyy+"/"+mm+"/"+dd+ "("+dayArr[day]+")");
+}
 
 test4.onclick = function(){
     console.log(3 + 7 + "7"); // 107, string
@@ -73,10 +73,10 @@ test4.onclick = function(){
     // [] -> [].toString -> '' + 1 => '1'
     console.log([].toString() + 1); // 1, string
 
-    console.log({} + 1);
-    function fn(){}
+    console.log({} + 1); // [object Object]1
+    function fn(){} 
 
-    console.log(fn + 1);
+    console.log(fn + 1); // function fn(){}1
 };
 
 test5.onclick = function(){
@@ -133,8 +133,8 @@ test7.onclick = function(){
    function fn(){}
    console.log(Boolean(fn)); // true
 
-   console.log("0" == 0); // true
-   console.log([] == 0); // true
+   console.log("0" == 0); // true "0"-> 0
+   console.log([] == 0); // true []-> ""-> 0
    console.log([] == "0"); // false
 };
 

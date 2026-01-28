@@ -63,7 +63,7 @@ document.querySelector("#class-name").onclick = function (){
         if(current != 'springgreen'){
             li.style.backgroundColor = 'springgreen';
         } else{
-            li.style.backgroundColor = white;
+            li.style.backgroundColor = 'white';
         }
     }
 };
