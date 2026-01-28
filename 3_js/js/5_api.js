@@ -179,4 +179,6 @@ test9.onclick = function(){
 
     num % 2 == 0 && alert("짝수");
     num % 2 == 1 && alert("홀수");
+
+    num % 2 == 0 ? alert("짝수") : alert("홀수");
 }

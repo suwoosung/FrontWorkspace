@@ -54,34 +54,19 @@
 	</form>
 	<script type="text/javascript">
 		function showVal(){
-			var pName = document.querySelector("#productName");
-			var pAmount = document.querySelector("#productAmount"); 
-			var pLevel = document.querySelector("#productLevel");
-			var msg = document.querySelector("#message");
-
-			var info = "상품명 : "+pName.value+"\n"
-				+"납품등급 : "+pAmount.value+"\n"
-				+"납품수량 : "+pLevel.value+"\n"
-				+"기타사항 : "+msg.value+"\n"
-				+"입력하신 내용이 맞습니까?"
-			
-			alert(info);
+			pVal.innerText = productLevel.value;
 		}
 
 		function printProduct(){
-			var pName = document.querySelector("#productName");
-			var pAmount = document.querySelector("#productAmount"); 
-			var pLevel = document.querySelector("#productLevel");
-			var msg = document.querySelector("#message");
+			var result = "상품명 : "+productName.value+"\n"
+				+"납품수량 : "+productAmount.value+"\n"
+				+"납품등급 : "+productLevel.value+"\n"
+				+"기타사항 : "+message.value+"\n";
 
-			var info = "상품명 : "+pName.value+"\n"
-				+"납품등급 : "+pAmount.value+"\n"
-				+"납품수량 : "+pLevel.value+"\n"
-				+"기타사항 : "+msg.value+"\n"
-				+"입력하신 내용이 맞습니까?"
-
-			var result = document.querySelector("#result");
-			result.innerText = info;
+			if(confirm(result+"입력하신 내용이 맞습니까?")){
+				var area = document.querySelector("#result");
+				area.innerHTML = result.replaceAll("\n","<br>");
+			}
 		}
   </script>
 </body>

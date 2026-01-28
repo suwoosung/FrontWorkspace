@@ -32,17 +32,17 @@
 	<div id="area"></div>
 	<script type="text/javascript">
 		function printValue() {
-			var name = document.querySelector("input");
+			var customer = document.querySelector("input");
 			var pname = document.querySelector("#pname");
 			var price = document.querySelector("input[name=price]");
 
-			var input = document.querySelector("#area");
+			//var area = document.querySelector("#area");
 
-			var info = "구매자 : "+name.value+"님\n"
+			var info = "구매자 : "+customer.value+"님\n"
 					+"상품명 : "+pname.value+"\n"
-					+"가격 : "+price.value+"만원"
+					+"가격 : "+price.value+"만원";
 
-			input.innerText = info;
+			area.innerText = info;
 		}
 	</script>
 </body>
