@@ -59,24 +59,24 @@
             2) 등록 완료후 작성한 내용을 비워줄것
         */
         function insertBoard(){
-           var titleTag = document.querySelector("input[name=title]");
-           var contentTag = document.querySelector("textarea[name=content]");
-           var listContainer = document.querySelector("#boardList");
+           var titleTag = document.querySelector("input[name=title]").value;
+           var contentTag = document.querySelector("textarea[name=content]").value;
+           var list = document.querySelector("#boardList");
 
-           if(/.+/.test(titleTag.value) && /.+/.test(contentTag.value)){
-                var ul = document.createElement("ul");
+           if(/.+/.test(titleTag) && /.+/.test(contentTag)){
+                var ul = document.createElement("ul"); 
                 var liTitle = document.createElement("li");
                 var liContent = document.createElement("li");
 
-                liTitle.textContent = "제목: " + titleTag.value;
-                liContent.textContent = "내용: " + contentTag.value;
+                liTitle.textContent = "제목: " + titleTag;
+                liContent.textContent = "내용: " + contentTag;
 
                 ul.appendChild(liTitle);
                 ul.appendChild(liContent);
-                listContainer.appendChild(ul); 
+                list.appendChild(ul); 
 
-                titleTag.value = "";
-                contentTag.value = "";
+                titleTag = "";
+                contentTag = "";
            } else{
                 alert("제목과 내용모두입력");
            }
@@ -87,8 +87,18 @@
             검색내용을 비워둔후 재검색 눌렀을때는 전체 게시글목록이 나와야함.
         */
         function searchTitle(){
+            var keyword = document.querySelector("input[name=search]").value;
+            var posts = document.querySelectorAll("#boardList > *"); // nodelist 객체 출력
 
-          
+            posts.forEach(function(post){
+                var text = post.textContent; // 글자만 가져오는 속성
+                
+                if(text.includes(keyword)){
+                    post.style.display = ""; // none설정 취소
+                } else{
+                    post.style.display = "none";
+                }
+            })
         }
     
     </script>
