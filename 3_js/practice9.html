@@ -35,33 +35,62 @@
     <button type="button" data-url='https://www.w3schools.com'>와삼</button>
   </div>
   <script>
+    document.querySelector("#btn-generate").onclick = function(e){
+      var btns = document.querySelectorAll('.btn-wrapper > button');
 
-    document.querySelector("#btn-generate").onclick = function() {
-    var siteData = [
-        { name: "네이버", url: "https://www.naver.com" },
-        { name: "구글", url: "https://www.google.com" },
-        { name: "KH", url: "https://www.iei.or.kr" },
-        { name: "와삼", url: "https://www.w3schools.com" }
-    ];
+      for(var button of btns){
+        var btn = document.createElement("button");
+        btn.innerText = button.innerText;
+        btn.dataset.url = button.dataset.url;
+        //console.log(button.dataset.url);
 
-    var wrapper = document.querySelector(".btn-wrapper");
+        btn.onclick = function(e){ // 새 버튼 기능 
+          location.assign(this.dataset.url);
+        }
+        document.querySelector(".btn-wrapper").appendChild(btn);
+      }
+    }
+
+//     document.querySelector("#btn-generate").onclick = function(e){
+//       var btns = document.querySelectorAll('.btn-wrapper > button');
+
+//       for(var button of btns){
+//         var btn = document.createElement("button");//<button></button>
+//         btn.innerText = button.innerText;
+//         btn.onclick = function(e){
+//           location.assign(button.dataset.url);
+//         }
+
+//         document.querySelector(".btn-wrapper").appendChild(btn);
+//       }
+//     }
+
+//      document.querySelector("#btn-generate").onclick = function() {
+//      var siteData = [
+//          { name: "네이버", url: "https://www.naver.com" },
+//         { name: "구글", url: "https://www.google.com" },
+//         { name: "KH", url: "https://www.iei.or.kr" },
+//          { name: "와삼", url: "https://www.w3schools.com" }
+//     ];
+
+//      var wrapper = document.querySelector(".btn-wrapper");
     
-    siteData.forEach(function(site) {
-        var newBtn = document.createElement("button");
-        newBtn.type = "button";
-        newBtn.innerText = site.name;
+//      siteData.forEach(function(site) {
+//          var newBtn = document.createElement("button");
+//          newBtn.type = "button";
+//          newBtn.innerText = site.name;
         
-        newBtn.onclick = function() {
-            location.href = site.url; 
-        };
+//         newBtn.onclick = function() {
+//              location.href = site.url; 
+//          };
 
-        wrapper.appendChild(newBtn);
+//          wrapper.appendChild(newBtn);
         
-        wrapper.appendChild(document.createTextNode(" "));
-    });
+//          wrapper.appendChild(document.createTextNode(" "));
+//     });
 
-    this.disabled = true; // 중복 생성 방지
-};
+//     this.disabled = true; // 중복 생성 방지
+// };
   
   </script>
 
