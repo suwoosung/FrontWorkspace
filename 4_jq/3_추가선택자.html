@@ -65,11 +65,11 @@
         //     $("input[class]").css('background','red');
 
         //     // 2. type이 text인 요소 선택
-        //     $("input[type=text]").val('change');
+        //     $("input[type=text]").val('change'); // value를 'change'로 변경
 
         //     // 3. type이 ra로 시작하거나, box로 끝나는 요소를 선택하여 checked 속성 변경
         //     $("input[type^=ra]").attr('checked',true);
-        //     $("input[type&=box]").attr('checked',true);
+        //     $("input[type$=box]").attr('checked',true);
         //     // attr : html속성들을 추가하거나, 속성에 저장된 값을 가져오는 메서드
 
              // 4. class명에 st2가 포함된 요소를 선택 후, css값과 value을 동시에 변경
@@ -101,7 +101,7 @@
                 alert($(":text").val());
             })
 
-            //mouseenter , mouseout이벤트 바인딘
+            //mouseenter , mouseout이벤트 바인딩
             $(":submit")
             .mouseenter(function(){
                 // this을 jquery객체로 변환 => $(this)
