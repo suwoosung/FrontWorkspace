@@ -122,18 +122,20 @@
             var search = document.querySelector("input[name=search]").value;
             var list = document.querySelectorAll("#boardList > li"); // nodelist 객체 출력
 
-            var fiteredList = [];
+            var fiteredList = []; // 필터링된 결과를 담을 배열
 
             for (var li of list) {
                 var textcontent = li.querySelector("h5").innerText;
-                li.style.display = "block";
                 if (textcontent.includes(search)) {
                     //filteredList.push(li);
                     // 이친구들만 보여야함
+                    li.style.display = "block";
+                    fiteredList.push(li); // 배열에 넣음
+                } else{
                     li.style.display = "none";
                 }
             }
-            console.log(fiteredList);
+            console.log(fiteredList); // 검색된 결과수
 
             // posts.forEach(function(post){
             //     var text = post.textContent; // 글자만 가져오는 속성

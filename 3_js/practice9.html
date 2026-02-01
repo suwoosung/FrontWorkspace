@@ -41,13 +41,13 @@
       for(var button of btns){
         var btn = document.createElement("button");
         btn.innerText = button.innerText;
-        btn.dataset.url = button.dataset.url;
+        btn.dataset.url = button.dataset.url; // 사용자 정의 데이터 속성에 접근할 수 있게 해주는 읽기/쓰기 인터페이스
         //console.log(button.dataset.url);
 
         btn.onclick = function(e){ // 새 버튼 기능 
-          location.assign(this.dataset.url);
+          location.assign(this.dataset.url); // 지금 눌린 버튼에 저장된 URL 데이터
         }
-        document.querySelector(".btn-wrapper").appendChild(btn);
+        document.querySelector(".btn-wrapper").appendChild(btn); // btn-wrapper에 btn이란 새 버튼을 넣음
       }
     }
 
