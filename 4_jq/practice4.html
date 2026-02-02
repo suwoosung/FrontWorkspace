@@ -11,7 +11,16 @@
 <body>
     <h2>Event 1</h2>
     <script>
-        
+        $(function(){
+            $("select[name=number]").change(function(){
+                var val = $(this).val();
+                if(""!=val){
+                    $("#selNum").text(val+"번");
+                } else{
+                    $("#selNum").text(val);;
+                }
+            });
+        });
     </script>
     
     <select name="number">
@@ -27,7 +36,16 @@
 
     <h2>Event 2</h2>
     <script>
-    
+        $(function(){
+            $("#event2 tr:gt(0)").click(function(){
+                var td = $(this).children();
+
+                $("#s1").text(td.eq(0).text());
+                $("#s2").text(td.eq(1).text());
+                $("#s3").text(td.eq(2).text());
+                $("#s4").text(td.eq(3).text());
+            });
+        });
     </script>
     
     <table id="event2" border="1">
@@ -46,7 +64,19 @@
     
     <h2>Event 3</h2>
     <script>
-    
+        $(function(){
+            $("#event3 tr:gt(0)").click(function(){
+                $("#event3 tr").css('background','');
+                $(this).css('background','red');
+
+                var td = $(this).children();
+
+                $("#s5").text(td.eq(0).text());
+                $("#s6").text(td.eq(1).text());
+                $("#s7").text(td.eq(2).text());
+                $("#s8").text(td.eq(3).text());
+            });
+        });
     </script>
 
     <table id="event3" border="1">

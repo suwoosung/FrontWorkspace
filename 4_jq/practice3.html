@@ -33,9 +33,10 @@
     <script>
         //선택한 select박스의 value값을 콘솔창에 출력
         function selectBtn(){
-            var select = $("option").value;
-            var selected = $("option:selected").value;
-            var confirm = select == selected;
+            var select = $("option").val();
+            var selected = $("option:selected").val();
+            var confirm = (select == selected);
+            console.log(confirm);
         }
     </script>
         
