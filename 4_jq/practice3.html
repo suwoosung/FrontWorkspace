@@ -13,10 +13,10 @@
     <script>
         //체크한 체크박스의 value값들을 콘솔창에 출력
         function checkBtn(){
-            var checked = $("input[name:ckeck]:checked");
-            for(var v of value){
-                console.log(v);
-            }
+            var checked = $("input[name=check]:checked");
+            checked.each(function(){
+                console.log(this.value);
+            })
         }
     </script>
         
@@ -35,7 +35,7 @@
         function selectBtn(){
             var select = $("option").value;
             var selected = $("option:selected").value;
-            var confirm = varselect == selected;
+            var confirm = select == selected;
         }
     </script>
         
