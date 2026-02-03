@@ -15,7 +15,9 @@
             $("select[name=number]").change(function(){
                 var val = $(this).val();
                 if(""!=val){
+
                     $("#selNum").text(val+"번");
+                    //$("#selNum").html(val+"번");
                 } else{
                     $("#selNum").text(val);;
                 }
@@ -37,15 +39,25 @@
     <h2>Event 2</h2>
     <script>
         $(function(){
-            $("#event2 tr:gt(0)").click(function(){
-                var td = $(this).children();
+            $("#event2 tr").not(":first").on("click",function(e){
+                var $tds = $(this).children();
 
-                $("#s1").text(td.eq(0).text());
-                $("#s2").text(td.eq(1).text());
-                $("#s3").text(td.eq(2).text());
-                $("#s4").text(td.eq(3).text());
-            });
-        });
+                $tds.each(function(index, td){
+                    $("#s"+(index+1)).text($(td).text());
+                })
+            })
+        })
+
+        // $(function(){
+        //     $("#event2 tr:gt(0)").click(function(){
+        //         var td = $(this).children();
+
+        //         $("#s1").text(td.eq(0).text());
+        //         $("#s2").text(td.eq(1).text());
+        //         $("#s3").text(td.eq(2).text());
+        //         $("#s4").text(td.eq(3).text());
+        //     });
+        // });
     </script>
     
     <table id="event2" border="1">
@@ -65,18 +77,31 @@
     <h2>Event 3</h2>
     <script>
         $(function(){
-            $("#event3 tr:gt(0)").click(function(){
-                $("#event3 tr").css('background','');
+            $("#event3 tr").not(":first").on("click",function(e){
+                var $tds = $(this).children();
+
+                $(this).siblings().css('background','');
                 $(this).css('background','red');
 
-                var td = $(this).children();
+                $tds.each(function(index, td){
+                    $("#s"+(index+5)).text($(td).text());
+                })
+            })
+        })
 
-                $("#s5").text(td.eq(0).text());
-                $("#s6").text(td.eq(1).text());
-                $("#s7").text(td.eq(2).text());
-                $("#s8").text(td.eq(3).text());
-            });
-        });
+        // $(function(){
+        //     $("#event3 tr:gt(0)").click(function(){
+        //         $("#event3 tr").css('background','');
+        //         $(this).css('background','red');
+
+        //         var td = $(this).children();
+
+        //         $("#s5").text(td.eq(0).text());
+        //         $("#s6").text(td.eq(1).text());
+        //         $("#s7").text(td.eq(2).text());
+        //         $("#s8").text(td.eq(3).text());
+        //     });
+        // });
     </script>
 
     <table id="event3" border="1">
