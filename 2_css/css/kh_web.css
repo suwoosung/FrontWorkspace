@@ -60,7 +60,7 @@
     position: sticky;
     top: 0;
     /*
-        stickey
+        sticky
         - 스크롤이 임계점에 도달했을 때 화면애 스트커처럼 요소를 붙이는 속성
         - 평소에는 기본position상태를 유지하다가, 임계점 도달시 flex상태
     */
