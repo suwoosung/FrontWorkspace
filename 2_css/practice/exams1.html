@@ -13,26 +13,33 @@
     <style>
         table {
             width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
+            margin: 0 auto;
         }
         th, td {
             border: 1px solid black;
-            padding: 10px;
+            padding: 0px;
             text-align: center;
-            margin: 2;
         }
         th {
             background-color: #ec8359;
             color: white;
-           
         }
-        td {
+        tbody td {
             background-color: #f4f5c1;
         }
         tfoot td {
             background-color: #ec8359;
             color: white;
+        }
+        .text-left{
+            text-align: left;
+        }
+        textarea{
+            vertical-align: middle;
+        }
+        .sub {                
+            display: block;      
+            margin: 0px 70px;   
         }
     </style>
 </head>
@@ -43,23 +50,23 @@
             제목 <input type="text" name="title" size="31" placeholder="제목을 입력하시오."><br>
             내용 <textarea name="content" cols="30" rows="10" style="resize: none;" placeholder="내용을 입력하시오."></textarea><br>
             첨부파일 <input type="file" value="파일선택" name="uploadFile"><br><br>
-            <td></td><input type="submit" value="작성하기">
+            <td></td><input type="submit" value="작성하기" class="sub">
         </fieldset>
     </form>
     <hr>
     <table border="1">
         <thead>
             <tr>
-                <th width="10%" height="10">번호</th>
-                <th colspan="2" width="150%">제목</th>
-                <th width="40%">작성자</th>
-                <th width="40%">작성일</th>
-                <th width="10%" height="10">조회수</th>
+                <th>번호</th>
+                <th colspan="2">제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>9</td>
+                <td class="text-left">9</td>
                 <td>공지사항 제목 9</td>
                 <td><input type="button" value="바로가기"></td>
                 <td>user01</td>
@@ -67,7 +74,7 @@
                 <td>34</td>
             </tr>
             <tr>
-                <td>9</td>
+                <td class="text-left">9</td>
                 <td>공지사항 제목 6</td>
                 <td><input type="button" value="바로가기"></td>
                 <td>answ445</td>
@@ -76,7 +83,7 @@
             </tr>
 
             <tr>
-                <td>9</td>
+                <td class="text-left">9</td>
                 <td>공지사항 제목 3</td>
                 <td><input type="button" value="바로가기"></td>
                 <td>testg12</td>
@@ -85,7 +92,7 @@
             </tr>
 
             <tr>
-                <td>9</td>
+                <td class="text-left">9</td>
                 <td>공지사항 제목 2</td>
                 <td><input type="button" value="바로가기"></td>
                 <td>palwe3</td>
@@ -94,7 +101,7 @@
             </tr>
 
             <tr>
-                <td>9</td>
+                <td class="text-left">9</td>
                 <td>공지사항 제목 1</td>
                 <td><input type="button" value="바로가기"></td>
                 <td>xml23</td>

@@ -4,40 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/exams2.css">
+    <link rel="stylesheet" href="../css/exams2_css.css">
 </head>
 <body>
     <div id="container">
         <div id="header">
             <div>
-                <h2>KH Shopping Mall</h2><br>
-                <input type="search" name="" id="query" placeholder="상품명검색">
-                <input type="button" value="검색">
+                <h2>KH Shopping Mall</h2>
+                <div>
+                    <input type="search" name="" id="query" placeholder="상품명검색" class="search">
+                    <input type="button" value="검색" onclick="searchProduct()" class="btn">
+                </div>
             </div>
         </div>
 
         <div id="nav">
-            <div class="img">
-                <div class="row-1">
-                    <img></img>
-                    <img></img>
-                    <img></img>
-                    <img></img>
+            <div class="product-list">
+                <h3>상품 목록</h3>
+                <div class="row">
+                    <div class="product">
+                        <img src="../../images/js.png"></img>
+                        <p class="p-name">Do it! 자바프로그래밍 입문</p>
+                        <p class="p-price">15,500원</p>
+                        <button>장바구니담기</button>
+                    </div>
+                    <div class="product">
+                        <img src="../../images/oracle.jpg"></img>
+                        <p class="p-name">Do it! 오라클로 배우는...</p>
+                        <p class="p-price">20,000원</p>
+                        <button>장바구니담기</button>
+                    </div>
+                    <div class="product">
+                        <img src="../../images/oracle.jpg"></img>
+                        <p class="p-name">Do it! 리액트 네이티브 앱...</p>
+                        <p class="p-price">44,200원</p>
+                        <button>장바구니담기</button>
+                    </div>
+                    <div class="product">
+                        <img src="../../images/html.jpg"></img>
+                        <p class="p-name">Do it! HTML+CSS+자바...</p>
+                        <p class="p-price">30,000원</p>
+                        <button>장바구니담기</button>
+                    </div>
                 </div>
-                <div class="row-2">
-                    <img></img>
-                    <img></img>
-                    <img></img>
-                    <img></img>
+                <div class="row">
+                    <div class="product">
+                        <img src="../../images/jsp.jpg"></img>
+                        <p class="p-name">JSP 웹 프로그래밍과 스...</p>
+                        <p class="p-price">27,000원</p>
+                        <button>장바구니담기</button>
+                    </div>
+                    <div class="product">
+                        <img src="../../images/react200.PNG"></img>
+                        <p class="p-name">리액트 200제</p>
+                        <p class="p-price">22,500원</p>
+                        <button>장바구니담기</button>
+                    </div>
+                    <div class="product">
+                        <img src="../../images/js.png"></img>
+                        <p class="p-name">Do it! 자바스크립트 입문</p>
+                        <p class="p-price">16,200원</p>
+                        <button>장바구니담기</button>
+                    </div>
+                    <div class="product">
+                        <img src="../../images/node.png"></img>
+                        <p class="p-name">Node.js 프로그래밍 입문</p>
+                        <p class="p-price">32,400원</p>
+                        <button>장바구니담기</button>
+                    </div>
                 </div>
             </div>
-            <div>
-                장바구니<br>
-                Total: 0원
+            <div class="product-bag" id="productContainer" >
+                <h3>장바구니</h3>
+                <p>Total: 0원</p>
             </div>
     </div>
     <div id="footer">
         <p>&copy; 2024 KH shopping Mail. All rights reserved.</p>
     </div>
+    <script>
+        var mockProductList = [
+    {   
+        pno : 1,
+        name : "Do it ! 자바프로그래밍 입문",
+        description : "자바 프로그래밍을 입문하는데 있어서 최적의 책!",
+        price : 15500,
+        src : "resources/images/java.jpg"
+    } , 
+    {   
+        pno : 2,
+        name : "Do it ! 오라클로 배우는 데이터베이스 입문",
+        description : "오라클을 입문하는데 있어서 최적의 책!",
+        price : 20000,
+        src : "resources/images/oracle.jpg"
+    } , 
+    {   
+        pno : 3,
+        name : "Do it! 리액트 네이티브 앱 프로그래밍",
+        description : "리액트 네이티브를 입문하는데 있어서 최적의 책!",
+        price : 44200,
+        src : "resources/images/react.jpg"
+    } , 
+    {   
+        pno : 4,
+        name : "Do it ! HTML+CSS+자바스크립트 웹 표준의 정석",
+        description : "HTML+CSS+자바스크립트 프로그래밍을 입문하는데 있어서 최적의 책!",
+        price : 30000,
+        src : "resources/images/html.jpg"
+    } , 
+    {   
+        pno : 5,
+        name : "JSP 웹 프로그래밍과 스프링 프레임워크",
+        description : "JSP를 입문하는데 있어서 최적의 책!",
+        price : 27000,
+        src : "resources/images/jsp.jpg"
+    } , 
+    {   
+        pno : 6,
+        name : "리액트 200제",
+        description : "리액트를 입문하는데 있어서 최적의 책!",
+        price : 22500,
+        src : "resources/images/react200.PNG"
+    } , 
+    {   
+        pno : 7,
+        name : "Do it! 자바스크립트 입문",
+        description : "자바스크립트를 입문하는데 있어서 최적의 책!",
+        price : 16200,
+        src : "resources/images/js.png"
+    } , 
+    {   
+        pno : 8,
+        name : "Do it ! Node.js 프로그래밍 입문",
+        description : "Node.js을 입문하는데 있어서 최적의 책!",
+        price : 32400,
+        src : "resources/images/node.png"
+    } , 
+] 
+
+// ---------------- 검색기능과 관련된 코드 시작----------------
+function searchProduct() {
+    var query = document.getElementById("query").value.toLowerCase();
+    
+    var filteredProducts = mockProductList.filter(function(product) {
+        return product.name.toLowerCase().includes(query);
+    });
+
+    var container = document.getElementById("productContainer");
+    
+    container.innerHTML = "";
+
+    if (filteredProducts.length === 0) {
+        container.innerHTML = "<p class='no-result'>검색 결과가 없습니다.</p>";
+        return;
+    }
+
+    var htmlContent = ""; 
+
+    filteredProducts.forEach(function(product) {
+        htmlContent += `
+            <div class="product-bag">
+                <img src="${product.src}" alt="${product.name}">
+                <p class="p-name">${product.name}</p>
+                <p class="p-price">${product.price.toLocaleString()}원</p>
+                <button>장바구니담기</button>
+            </div>
+        `;
+    });
+
+    container.innerHTML = htmlContent;
+}
+// ---------------- 검색기능과 관련된 코드 끝----------------
+    </script>
 </body>
 </html>

@@ -1,65 +1,103 @@
 *{
-    border : 1px solid black;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 #container{
-    width: 850px;
+    width: 1450px;
     margin: auto;
-    
 }
 
-#header{
+#header {
     height: 100px;
+    background-color: blue;
+    color: white;
     display: flex;
+    align-content: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#header div:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 #header h2{
     border: none;
 }
 
-#header > div:first-child{
-    flex-basis: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(32, 32, 221);
-    color: white;
+#header .search{
+    width: 500px;
 }
 
-#header button{
+#header .btn{
     background-color: black;
     color: white;
+    border-radius: 3px;
 }
 
 #nav{
-     height: 800px;
+    height: 650px;
     display: flex;
+    background-color: lightgray;
 }
 
-#nav > div:nth-child(1){
+#nav h3 {
+    text-align: center; 
+}
+
+#nav .product-list {
     flex-basis: 70%;
+    padding: 20px;
 }
 
-#nav > div:nth-child(2){
-    flex-basis: 30%;
+#nav .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#nav .product {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    width: 220px;
+}
+
+#nav .product-bag {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    width: 350px;
+    margin: 10px;
+    margin-left: 80px;
+}
+
+#nav img{
+    width: 100%;
+    height: 150px;
+}
+
+#nav p{
     text-align: center;
 }
 
-#nav > .image{
-    height: 800px;
-    flex-direction: column;
-}
-
-#nav .row-1:nth-child(1){
-    flex-basis: 50%;
-}
-
-#nav .row-2:nth-child(2){
-    flex-basis: 50%;
+#nav button{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
 }
 
 #footer{
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
