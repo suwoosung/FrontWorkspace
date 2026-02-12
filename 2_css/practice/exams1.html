@@ -12,13 +12,12 @@
     <title>Document</title>
     <style>
         table {
-            width: 80%;
+            width: 100%;
             margin: 0 auto;
         }
         th, td {
             border: 1px solid black;
             padding: 0px;
-            text-align: center;
         }
         th {
             background-color: #ec8359;
@@ -30,16 +29,20 @@
         tfoot td {
             background-color: #ec8359;
             color: white;
+            text-align: center;
         }
-        .text-left{
-            text-align: left;
-        }
-        textarea{
+        .text{
+            margin-left: 28px;
+            margin-bottom: 2px;
+            width: 30%;
             vertical-align: middle;
         }
         .sub {                
             display: block;      
-            margin: 0px 70px;   
+            margin: 0px 120px;   
+        }
+        .btn {
+            width: 100%;
         }
     </style>
 </head>
@@ -47,9 +50,9 @@
     <form action="insert.no" method="post">
         <fieldset>
             <legend>공지사항 작성하기</legend>
-            제목 <input type="text" name="title" size="31" placeholder="제목을 입력하시오."><br>
-            내용 <textarea name="content" cols="30" rows="10" style="resize: none;" placeholder="내용을 입력하시오."></textarea><br>
-            첨부파일 <input type="file" value="파일선택" name="uploadFile"><br><br>
+                제목 <input type="text" name="title" class="text" size="31" placeholder="제목을 입력하시오."><br>
+                내용 <textarea name="content"class="text" cols="30" rows="10" style="resize: none;" placeholder="내용을 입력하시오."></textarea><br>
+                첨부파일 <input type="file" value="파일선택" name="uploadFile"><br><br>
             <td></td><input type="submit" value="작성하기" class="sub">
         </fieldset>
     </form>
@@ -65,45 +68,45 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="text-left">9</td>
+            <tr >
+                <td width="40px">9</td>
                 <td>공지사항 제목 9</td>
-                <td><input type="button" value="바로가기"></td>
-                <td>user01</td>
-                <td>2021-03-29</td>
-                <td>34</td>
+                <td width="50px"><input type="button" value="바로가기" class="btn"></td>
+                <td width="160px">user01</td>
+                <td width="160px">2021-03-29</td>
+                <td width="50px">34</td>
             </tr>
-            <tr>
-                <td class="text-left">9</td>
+            <tr >
+                <td>6</td>
                 <td>공지사항 제목 6</td>
-                <td><input type="button" value="바로가기"></td>
+                <td><input type="button" value="바로가기" class="btn"></td>
                 <td>answ445</td>
                 <td>2021-03-12</td>
                 <td>67</td>
             </tr>
 
             <tr>
-                <td class="text-left">9</td>
+                <td>3</td>
                 <td>공지사항 제목 3</td>
-                <td><input type="button" value="바로가기"></td>
+                <td><input type="button" value="바로가기" class="btn"></td>
                 <td>testg12</td>
                 <td>2021-03-01</td>
                 <td>98</td>
             </tr>
 
             <tr>
-                <td class="text-left">9</td>
+                <td>2</td>
                 <td>공지사항 제목 2</td>
-                <td><input type="button" value="바로가기"></td>
+                <td><input type="button" value="바로가기" class="btn"></td>
                 <td>palwe3</td>
                 <td>2021-01-02</td>
                 <td>85</td>
             </tr>
 
             <tr>
-                <td class="text-left">9</td>
+                <td>1</td>
                 <td>공지사항 제목 1</td>
-                <td><input type="button" value="바로가기"></td>
+                <td><input type="button" value="바로가기" class="btn"></td>
                 <td>xml23</td>
                 <td>2021-12-24</td>
                 <td>124</td>
